@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:database.sqlite
+    username: admin
+    password: admin
+    driver-class-name: org.sqlite.JDBC
