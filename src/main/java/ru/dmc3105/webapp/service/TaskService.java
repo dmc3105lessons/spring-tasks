@@ -39,4 +39,9 @@ public class TaskService {
         Task task = findById(id);
         taskRepository.delete(task);
     }
+
+    @Transactional
+    public Task update(Task entity) {
+        return taskRepository.save(entity);
+    }
 }

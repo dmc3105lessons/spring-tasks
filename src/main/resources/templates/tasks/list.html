@@ -19,14 +19,32 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 <h2 class="h5 mb-3">Список задач</h2>
-                <ul class="list-group">
-                    <li class="list-group-item"
-                        th:each="task : ${tasks}"
-                        th:text="${task.getTitle()}"
-                    >
-                        Пример задачи
-                    </li>
-                </ul>
+
+                <div th:if="${#lists.isEmpty(tasks)}"
+                     class="alert alert-info">
+                    Задач пока нет
+                </div>1
+
+                <div class="list-group"
+                     th:unles="${#lists.isEmpty(tasks)}">
+                    <a th:each="task : ${tasks}"
+                       th:href="@{/tasks/{id}(id=${task.id})}"
+                       class="list-group-item list-group-item-action">
+                        <div class="d-flex justify-content-between">
+                            <strong th:text="${task.title}">
+                                Название задачи
+                            </strong>
+
+                            <span th:text="${task.status}">
+                                NEW
+                            </span>
+                        </div>
+
+                        <small class="text-muted" th:text="${task.priority}">
+                            MEDIUM
+                        </small>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
