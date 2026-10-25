@@ -17,7 +17,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
 
     public List<Task> findAll() {
-        return taskRepository.findAll();
+        return taskRepository.findAllByOrderByCreatedAtDesc();
     }
 
     public List<Task> findByStatus(TaskStatus status)

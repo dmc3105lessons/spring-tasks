@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+</head>
+<body>
+<div class="container py-5">
+    <a class="btn btn-outline-secondary mb-4" th:href="@{/tasks}">
+        Назад к списку
+    </a>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h1 class="h3 mb-3" th:text="${task.title}">
+                Название задачи
+            </h1>
+            <p class="text-muted" th:text="${task.description}">
+                Описание
+            </p>
+
+            <dl class="row">
+                <dt class="col-sm-3">Статус</dt>
+                <dd class="col-sm-9" th:text="${task.status}">NEW</dd>
+
+                <dt class="col-sm-3">Приоритет</dt>
+                <dd class="col-sm-9" th:text="${task.priority}">MEDIUM</dd>
+
+                <dt class="col-sm-3">Срок выполнения</dt>
+                <dd class="col-sm-9" th:text="${task.dueDate ?: 'Не указан'}">Не указан</dd>
+
+                <dt class="col-sm-3">Создано</dt>
+                <dd class="col-sm-9" th:text="${task.createdAt}">NEW</dd>
+            </dl>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
