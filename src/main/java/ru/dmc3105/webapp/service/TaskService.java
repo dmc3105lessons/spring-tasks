@@ -22,7 +22,7 @@ public class TaskService {
 
     public List<Task> findByStatus(TaskStatus status)
     {
-        return taskRepository.findByStatus(status);
+        return taskRepository.findByStatusOrderByCreatedAtDesc(status);
     }
 
     public Task findById(Long id) {

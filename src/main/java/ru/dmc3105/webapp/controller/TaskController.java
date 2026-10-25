@@ -23,4 +23,6 @@ public class TaskController {
         model.addAttribute("tasks", taskService.findAll());
         return "tasks/list";
     }
+
+
 }
