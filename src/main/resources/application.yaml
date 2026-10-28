@@ -4,6 +4,11 @@ spring:
     username: admin
     password: admin
     driver-class-name: org.sqlite.JDBC
+    hikari:
+      data-source-properties:
+        date_class: "text"
+        date_string_format: "yyyy-MM-dd"
+        timestamp_string_format: "yyyy-MM-dd HH:mm:ss"
 springdoc:
   packages-to-scan: ru.dmc3105.webapp.controller
   paths-to-match: /**
