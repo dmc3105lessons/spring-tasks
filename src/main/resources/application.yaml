@@ -9,6 +9,11 @@ spring:
         date_class: "text"
         date_string_format: "yyyy-MM-dd"
         timestamp_string_format: "yyyy-MM-dd HH:mm:ss"
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
 springdoc:
   packages-to-scan: ru.dmc3105.webapp.controller
   paths-to-match: /**
